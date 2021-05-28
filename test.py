@@ -24,7 +24,7 @@ def load_model_from_chk(chk_path):
     '''Returns model and idx_to_class dictionary'''
     try:
         # Load checkpoint 
-        checkpoint = torch.load(chk_path)
+        checkpoint = torch.load(chk_path, map_location=torch.device('cpu'))
         idx_to_class = checkpoint['idx_to_class']
 
         # Load the inception model

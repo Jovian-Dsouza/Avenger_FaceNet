@@ -320,7 +320,7 @@ def save_model(model, chk_path, idx_to_class, current_accuracy=1.0):
     '''Saves the model only if model doesnt exist or
        if the previous model accuracy was better'''
     try:
-        checkpoint = torch.load(chk_path)
+        checkpoint = torch.load(chk_path, map_location=torch.device('cpu'))
         if(current_accuracy < checkpoint['accuracy']):
             print("Not Saving, Previous model was better")
             return
