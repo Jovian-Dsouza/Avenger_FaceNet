@@ -23,10 +23,10 @@ RUN wget \
     && rm -f Miniconda3-latest-Linux-x86_64.sh 
 ENV PATH="/root/miniconda3/bin:${PATH}"
 
-RUN conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+RUN conda install --yes pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 
-RUN conda install --yes numpy scikit-learn tqdm facenet-pytorch \
-                       pillow 
+RUN pip install  numpy scikit-learn tqdm facenet-pytorch \
+                       pillow matplotlib
 
 COPY models /models
 COPY openface.pth /openface.pth
