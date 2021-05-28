@@ -36,4 +36,4 @@ COPY SpatialCrossMapLRN_temp.py /SpatialCrossMapLRN_temp.py
 COPY train.py /train.py
 COPY test.py /test.py
 
-# docker run -v <our local dataset path>:/dataset <your docker image> bash
+# docker run -v <our local dataset path>:/dataset jovain19/pytorch:latest bash
