@@ -113,8 +113,9 @@ As we can see the model is able to generate the face embeddings for the dataset.
 
     
 ![png](output/output_20_0.jpg)
-    
-    
+ 
+2D visualization of the embedded space using **TSNE**. From the below diagram we can see that the model is able to generate face embeddings that are easily distinguishable for different faces
+
 ![png](output/output_20_1.jpg)
     
 
