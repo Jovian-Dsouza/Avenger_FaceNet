@@ -50,13 +50,13 @@ Here is a subset of the dataset.
 
 ## Triplet Loss and Triplet Generator
 
-Here we train the model such it learns the face embeddings $f(x)$ from the image $x$ such that the squared L2 distance between all faces of the same identity is small and the distance between a pair of faces from different identities is large.
+Here we train the model such it learns the face embeddings **f(x)** from the image $x$ such that the squared L2 distance between all faces of the same identity is small and the distance between a pair of faces from different identities is large.
 
-This can be achieved with a *triplet loss* $L$ as defined by 
+This can be achieved with a *triplet loss* __L__ as defined by 
 
-$$L = \sum^{m}_{i=1} \large[ \small {\mid \mid f(x_{i}^{a}) - f(x_{i}^{p})) \mid \mid_2^2} - {\mid \mid f(x_{i}^{a}) - f(x_{i}^{n})) \mid \mid_2^2} + \alpha \large ] \small_+$$
+![triplet_loss](https://latex.codecogs.com/png.latex?%5Cbg_white%20L%20%3D%20%5Csum%5E%7Bm%7D_%7Bi%3D1%7D%20%5Clarge%5B%20%5Csmall%20%7B%5Cmid%20%5Cmid%20f%28x_%7Bi%7D%5E%7Ba%7D%29%20-%20f%28x_%7Bi%7D%5E%7Bp%7D%29%29%20%5Cmid%20%5Cmid_2%5E2%7D%20-%20%7B%5Cmid%20%5Cmid%20f%28x_%7Bi%7D%5E%7Ba%7D%29%20-%20f%28x_%7Bi%7D%5E%7Bn%7D%29%29%20%5Cmid%20%5Cmid_2%5E2%7D%20&plus;%20%5Calpha%20%5Clarge%20%5D%20%5Csmall_&plus;)
 
-This loss minimizes the distance between an anchor image $x^a_i$ and a positive image $x^p_i$ and maximizes the between the anchor image $x^a_i$ and a negative image $x^b_i$ 
+This loss minimizes the distance between an anchor image *x<sup>a</sup>* and a positive image *x<sup>p</sup>*  and maximizes the between the anchor image *x<sup>a</sup>*  and a negative image *x<sup>n</sup>* 
 
 The `generate_triplets` function generates these positive and negative images for the entire batch. The current implementation randomly chooses the positive and negative images from the current batch. This can easily be enhanced to select difficult triplets to make the model train better. 
 
